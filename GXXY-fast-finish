@@ -1,0 +1,10 @@
+//fiddler  scripts  insert under  OnBeforeRequest
+
+
+if (oSession.fullUrl.Contains("https://gxxy.qdgxjt.com/web/managerAPI/task/reportSchedule"))
+        {
+            var strBody=oSession.GetRequestBodyAsString();
+            strBody=strBody.replace("10000","10000000");
+            oSession.utilSetRequestBody(strBody);
+        }
+
